@@ -1,0 +1,33 @@
+.boule{
+    background-image: url(../img/gradient.svg);
+    background-size: 100%;
+    border-radius: 50%;
+    height:20vh;
+    width: 20vh;
+    position: absolute;
+    z-index: -2;
+    
+  }
+  .boule1{
+    right:10%;
+    bottom:-50%;
+    transform: translate(-50%, -50%) ;
+    animation: up alternate-reverse ease-in-out infinite 5s ;
+    /* transition: 0.8salternate-reverse ease-in-out; */
+  }
+.boule2{ 
+  right: -5%;
+  bottom:-50%;
+  animation: up alternate-reverse ease-in-out infinite 10s ;
+}
+.boule3{ 
+  left:0;
+  bottom:-50%;
+  animation: up alternate-reverse ease-in-out infinite 8s ;
+}
+.boule4{ 
+  bottom:-50%;
+  right: 10%;
+  transform: scale(0.7);
+  animation: up alternate-reverse ease-in-out infinite 7s ;
+}
