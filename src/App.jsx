@@ -3,11 +3,12 @@ import {  Routes , Route,BrowserRouter, NavLink} from "react-router-dom";
 import Navbar from './components/NavBar';
 import CV from './page/CV';
 import Portfolio from './page/portfolio';
-
+import {AnimatePresence,motion}from  "framer-motion";
 
 function App() {
  
   return (
+    <AnimatePresence exitBeforeEnter>
    <BrowserRouter>
      <Routes>
        <Route exact path="/"element={<CV />}/>
@@ -17,6 +18,7 @@ function App() {
      <div className='bigBoule '></div>
      <Navbar />
    </BrowserRouter>
+   </AnimatePresence>
   )
 }
 

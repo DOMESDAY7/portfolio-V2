@@ -14,12 +14,12 @@ const Navbar = () => {
                 setTimeout(() => {
                     boule.style.top="90%"
                     boule.style.right="95%"
-                }, 1501);
+                }, 1001);
                    boule.animate([
                     {top:"5%", right:"5%"},
                     {transform:`scale(${tailleMaxBoule})`},
                     {top:"90%", right:"95%"},
-                ],1500)
+                ],1000)
                 check=false
                
             }else{
@@ -27,13 +27,13 @@ const Navbar = () => {
                     boule.style.right="5%"
                     boule.style.top="5%"
                     console.log("bonjour")
-                }, 1501);
+                }, 1001);
                 boule.animate([
                     {top:"90%", right:"95%"},
                     {transform:`scale(${tailleMaxBoule})`},
                     {top:"5%", right:"5%"},
                     
-                ],1500)
+                ],1000)
                 
                 
                 check=true
