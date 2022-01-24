@@ -7,32 +7,34 @@ const Navbar = () => {
         let boule= document.querySelector(".bigBoule");
         let navButtons = document.querySelectorAll(".navButton")
         let check=true;
+        let tailleMaxBoule =50;
         navButtons.forEach(navButton => {
             navButton.addEventListener("click",()=>{
                if(check){ 
                 setTimeout(() => {
-                    boule.style.left="90%"
+                    boule.style.top="90%"
                     boule.style.right="95%"
-                }, 999);
+                }, 1501);
                    boule.animate([
                     {top:"5%", right:"5%"},
-                    {transform:"scale(30)"},
+                    {transform:`scale(${tailleMaxBoule})`},
                     {top:"90%", right:"95%"},
-                ],1000)
+                ],1500)
                 check=false
                
             }else{
+                setTimeout(() => {
+                    boule.style.right="5%"
+                    boule.style.top="5%"
+                    console.log("bonjour")
+                }, 1501);
                 boule.animate([
                     {top:"90%", right:"95%"},
-                    {transform:"scale(30)"},
+                    {transform:`scale(${tailleMaxBoule})`},
                     {top:"5%", right:"5%"},
-                   
                     
-                ],1000)
-                setTimeout(() => {
-                    boule.style.left="5%"
-                    boule.style.right="5%"
-                }, 999);
+                ],1500)
+                
                 
                 check=true
                 }
@@ -41,12 +43,11 @@ const Navbar = () => {
     });
     return (
         <nav className='containerNav'>
-        
             <NavLink  to="/portfolio">
-                <div class="navButton text-center" activeClassName="selected">Portfolio</div>
+                <div className="navButton text-center" >Portfolio</div>
             </NavLink><br/>
             <NavLink  to="/cv">
-                <div className="navButton text-center " activeClassName="selected">CV</div>
+                <div className="navButton text-center " >CV</div>
             </NavLink>
         </nav>
     );
