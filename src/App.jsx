@@ -1,10 +1,10 @@
 import React from 'react';
-import {  Routes , Route,BrowserRouter, NavLink} from "react-router-dom";
+import {  Routes , Route,BrowserRouter} from "react-router-dom";
 import Navbar from './components/NavBar';
 import CV from './page/CV';
 import Portfolio from './page/portfolio';
-import {AnimatePresence,motion}from  "framer-motion";
-
+import {AnimatePresence}from  "framer-motion";
+import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
  
   return (

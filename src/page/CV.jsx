@@ -7,7 +7,7 @@ class CV extends Component {
       <motion.div
         exit={{ opacity: 1 }}
         animate={{ opacity: 1, y: "-10px"}}
-        initial={{ opacity: 0 }}
+        initial={{ opacity: 1 }}
         transition={{duration:1.5}}
         className="page m-auto position-relative container container-fluid"
       >
