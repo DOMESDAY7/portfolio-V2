@@ -5,10 +5,10 @@ class CV extends Component {
   render() {
     return (
       <motion.div
-        exit={{ opacity: 1 }}
-        animate={{ opacity: 1, y: "-10px"}}
-        initial={{ opacity: 1 }}
-        transition={{duration:1.5}}
+        exit={{ opacity: 0 }}
+        animate={{ opacity: 1}}
+        initial={{ opacity: 0 }}
+        transition={{delay:0.5}}
         className="page m-auto position-relative container container-fluid"
       >
         <h1 className="text-center">Mathieu Andriamiraho</h1>
