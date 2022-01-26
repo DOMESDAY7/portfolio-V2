@@ -1,74 +1,64 @@
-.textBuble{
-    background-color: rgba(226, 226, 226, 0.342);
-    backdrop-filter: blur(10px);
-
-    border-radius: 20px;
+.textBuble {
+  background-color: rgba(226, 226, 226, 0.342);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
   display: inline-block;
   padding: 15px;
-
 }
-.content{
+.content {
   display: grid;
   grid-template:
-  "img profil profil" 0.2fr
-  "interet chrono chrono"0.1fr
-  "coord chrono chrono"0.3fr
-  "competence competence competence"0.2fr/1fr 1fr 1fr
-  
- !important ;
- gap: 2vh;
+    "img profil profil" 0.2fr
+    "interet chrono chrono" 0.1fr
+    "coord chrono chrono" 0.3fr
+    "competence competence competence" 0.2fr/1fr 1fr 1fr !important ;
+  gap: 2vh;
   /* border: red solid; */
 }
-.Profil{
+.Profil {
   grid-area: profil;
   justify-self: center;
   align-self: center;
 }
-.Centres-d’interets{
+.Centres-d’interets {
   grid-area: interet;
   justify-self: center;
   align-self: center;
 }
-.Competences{
+.Competences {
   grid-area: competence;
   justify-self: center;
   align-self: center;
 }
-.chrono{
+.chrono {
   grid-area: chrono;
   justify-self: center;
   align-self: center;
 }
-.Coordonnees{
+.Coordonnees {
   grid-area: coord;
   justify-self: center;
   align-self: center;
   /* border: red solid; */
 }
-.mathieuPP{
-  justify-self:center ;
+.mathieuPP {
+  justify-self: center;
   align-self: center;
 }
-@media (max-width:992px) {
-  .content{
+@media (max-width: 992px) {
+  .content {
     grid-template:
-    "img" 0.2fr
-    "profil"0.2fr
-    "competence"
-    "interet "0.1fr
-    "chrono "0.2fr
-    "coord"0.3fr
-    
-   !important ;
-   gap: 2vh;
-    
+      "img" 0.2fr
+      "profil" 0.2fr
+      "competence"
+      "interet " 0.1fr
+      "chrono " 0.2fr
+      "coord" 0.3fr !important ;
+    gap: 2vh;
   }
- 
-  
 }
-@media (max-width:576px) {
-  .Coordonnees{
+@media (max-width: 576px) {
+  .Coordonnees {
     margin: unset;
   }
- 
 }
