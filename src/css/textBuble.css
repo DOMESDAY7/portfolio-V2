@@ -1,7 +1,7 @@
 .textBuble{
     background-color: rgba(226, 226, 226, 0.342);
     backdrop-filter: blur(10px);
-    border: 0.5px solid white;
+
     border-radius: 20px;
   display: inline-block;
   padding: 15px;

@@ -31,7 +31,7 @@ const Projectcards = () => {
     <main>
       {projects.map((project) => {
         return (
-          <div>
+          <div className="dark:text-white">
             <motion.div layoutId={project.id} onClick={() => setSelectedId(project.id)}>
               <motion.h5>{project.title}</motion.h5>
               <motion.h2>{project.text}</motion.h2>
