@@ -4,8 +4,9 @@ import Navbar from './components/NavBar';
 import CV from './page/CV';
 import Portfolio from './page/portfolio';
 import {AnimatePresence}from  "framer-motion";
-
+import { useEffect } from 'react';
 function App() {
+  
  
   return (
     <AnimatePresence exitBeforeEnter>
@@ -16,6 +17,7 @@ function App() {
        <Route exact path="/portfolio"element={<Portfolio />}/>
      </Routes>
      <div className='bigBoule '></div>
+     <button className="darkmodeBtn rounded-full bg-black text-white" onClick={()=>{document.body.classList.toggle("dark")}}>darkmode</button>
      <Navbar />
    </BrowserRouter>
    </AnimatePresence>
