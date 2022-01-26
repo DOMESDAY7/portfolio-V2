@@ -4,7 +4,7 @@ import Navbar from './components/NavBar';
 import CV from './page/CV';
 import Portfolio from './page/portfolio';
 import {AnimatePresence}from  "framer-motion";
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 function App() {
  
   return (

@@ -29,13 +29,15 @@ const Projectcards = () => {
 
   return (
     <main>
-      {projects.map((item) => {
+      {projects.map((project) => {
         return (
-          <motion.div layoutId={item.id} onClick={() => setSelectedId(item.id)}>
-            <motion.h5>{item.title}</motion.h5>
-            <motion.h2>{item.text}</motion.h2>
-            <motion.button onClick={ ()=>{setSelectedId(null)} }>X</motion.button>
-          </motion.div>
+          <div>
+            <motion.div layoutId={project.id} onClick={() => setSelectedId(project.id)}>
+              <motion.h5>{project.title}</motion.h5>
+              <motion.h2>{project.text}</motion.h2>
+              <motion.button onClick={ ()=>{setSelectedId(null)} }>X</motion.button>
+            </motion.div>
+          </div>
         );
       })}
     </main>

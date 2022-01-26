@@ -9,9 +9,9 @@ class CV extends Component {
         animate={{ opacity: 1}}
         initial={{ opacity: 0 }}
         transition={{delay:0.5}}
-        className="page m-auto position-relative container container-fluid"
+        className="page max-w-5xl mx-auto relative "
       >
-        <h1 className="text-center">Mathieu Andriamiraho</h1>
+        <h1 className="text-center text-4xl">Mathieu Andriamiraho</h1>
         <TextBuble />
         <div className="boule1 boule"></div>
         <div className="boule2 boule"></div>
