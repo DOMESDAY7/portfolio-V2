@@ -13,10 +13,12 @@ class CV extends Component {
       >
         <h1 className="text-center text-4xl">Mathieu Andriamiraho</h1><br/>
         <TextBuble />
-        <div className="boule1 boule"></div>
-        <div className="boule2 boule"></div>
-        <div className="boule3 boule"></div>
-        <div className="boule4 boule"></div>
+        <div className="containerBoule">
+          <div className="boule1 boule"></div>
+          <div className="boule2 boule"></div>
+          <div className="boule3 boule"></div>
+          <div className="boule4 boule"></div>
+        </div>
       </motion.div>
     );
   }

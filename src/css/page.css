@@ -11,7 +11,10 @@
     animation: flotte infinite 3s;
     width: 70%;
     grid-area: img;
+    transition: 0.8s ease-in;
+    position: unset;
 }
+
 @media (max-width:992px) {
     .page{
         border-radius: 0;

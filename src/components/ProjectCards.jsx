@@ -1,46 +1,40 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useState } from "react";
-
+// import { AnimatePresence, AnimateSharedLayout } from "framer-motion";
 const Projectcards = () => {
-  const [selectedId, setSelectedId] = useState(null);
-  const projects = [
+  const [isActive, setisActive] = useState(false);
+  const [projects, setprojects] = useState([
     {
       id: "1",
       text: "bonjour",
       title: "salut",
+      isAnimate: false,
     },
     {
       id: "2",
       text: "aurevoir",
       title: "salut",
+      isAnimate: false,
     },
     {
       id: "3",
       text: "aurevoir",
       title: "salut",
+      isAnimate: false,
     },
     {
       id: "4",
       text: "aurevoir",
       title: "salut",
+      isAnimate: false,
     },
-  ];
+  ]);
 
   return (
-    <main>
-      {projects.map((project) => {
-        return (
-          <div className="dark:text-white">
-            <motion.div layoutId={project.id} onClick={() => setSelectedId(project.id)}>
-              <motion.h5>{project.title}</motion.h5>
-              <motion.h2>{project.text}</motion.h2>
-              <motion.button onClick={ ()=>{setSelectedId(null)} }>X</motion.button>
-            </motion.div>
-          </div>
-        );
-      })}
-    </main>
+    <div className=" flex flex-wrap">
+     
+    </div>
   );
 };
 

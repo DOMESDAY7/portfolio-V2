@@ -29,6 +29,7 @@
   grid-area: competence;
   justify-self: center;
   align-self: center;
+
 }
 .chrono {
   grid-area: chrono;

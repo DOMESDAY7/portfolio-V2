@@ -4,8 +4,23 @@ import Navbar from "./components/NavBar";
 import CV from "./page/CV";
 import Portfolio from "./page/portfolio";
 import { AnimatePresence } from "framer-motion";
-// import { useEffect } from 'react';
+import { useEffect } from "react";
 function App() {
+  useEffect(() => {
+    let darkBtn = document.querySelector(".darkmodeBtn");
+    let fluid = document.querySelector(".fluidSwitch");
+    // fluid.animate([{}]);
+   darkBtn.addEventListener("click", () => {
+        document.querySelector("html").classList.toggle("dark");
+    });
+    darkBtn.addEventListener("mousedown",()=>{
+      fluid.classList.add("w-full")
+    })
+    darkBtn.addEventListener("mouseup",()=>{
+      fluid.classList.remove("w-full")
+      darkBtn.classList.toggle("justify-end")
+    })
+  }, []);
   return (
     <AnimatePresence exitBeforeEnter>
       <BrowserRouter>
@@ -15,17 +30,9 @@ function App() {
           <Route exact path="/portfolio" element={<Portfolio />} />
         </Routes>
         <div className="bigBoule "></div>
-        <button
-          className="darkmodeBtn rounded-full bg-black text-white fixed"
-          onClick={() => {
-            document.querySelector("html").classList.toggle("dark");
-          }}
-        >dark
-          <div className="rounded-full w-4 h-2 border-2 border-black border-solid">
-            <div className="rounded-full bg-black h-2"></div>
-          </div>
-
-        </button>
+        <div className="darkmodeBtn dark:text-white cursor-pointer flex  items-center fixed border-2 border-black dark:border-white w-14 rounded-full h-8 bottom-5 right-5 ease duration-300">
+          <div className="rounded-full w-6 h-6 bg-gradient-to-r to-cyan-500 from-blue-500 dark:bg-white fluidSwitch ease-out duration-300"></div>
+        </div>
 
         <Navbar />
       </BrowserRouter>
