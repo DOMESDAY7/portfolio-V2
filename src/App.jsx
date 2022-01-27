@@ -5,6 +5,7 @@ import CV from "./page/CV";
 import Portfolio from "./page/portfolio";
 import { AnimatePresence } from "framer-motion";
 import { useEffect } from "react";
+
 function App() {
   useEffect(() => {
     let darkBtn = document.querySelector(".darkmodeBtn");
@@ -17,8 +18,10 @@ function App() {
       fluid.classList.add("w-full")
     })
     darkBtn.addEventListener("mouseup",()=>{
-      fluid.classList.remove("w-full")
-      darkBtn.classList.toggle("justify-end")
+        fluid.classList.remove("w-full")
+        darkBtn.classList.toggle("justify-end")
+
+     
     })
   }, []);
   return (
