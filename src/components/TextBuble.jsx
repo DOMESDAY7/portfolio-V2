@@ -9,11 +9,13 @@ class TextBuble extends Component {
       });
   }
 
-  componentDidMount(){
-
-      fetch("http://localhost/portfolio-V2/API/?q=cv").then(resp=>resp.json())
-          .then(data=>this.setState({pageText:data}))
-     
+  componentDidMount() {
+    fetch("http://localhost/apiCV/index.php?q=cv")
+      .then((resp) => resp.json())
+      .then((data) => {
+        this.setState({ pageText: data })
+        console.log(data)
+    });
   }
 
   render() {
@@ -25,14 +27,21 @@ class TextBuble extends Component {
         let typeSkills = buble.text.split("#");
 
         return (
-          <section className={"textBuble dark:bg-slate-700/50 container  " +classes}>
+          <section
+            className={"textBuble dark:bg-slate-700/50 container  " + classes}
+          >
             <h5 className="text-center">{buble.titre}</h5>
             <p className="grid grid-cols-3 w-full">
               {typeSkills.map((typeSkill) => {
                 return (
                   <div className="text-center ">
                     {typeSkill.split("/").map((skill) => {
-                      return <span>{skill}<br/></span>;
+                      return (
+                        <span>
+                          {skill}
+                          <br />
+                        </span>
+                      );
                     })}
                   </div>
                 );
@@ -57,7 +66,6 @@ class TextBuble extends Component {
           src={mathieu}
           alt="image de mathieu andriamiraho"
           className=" mathieuPP"
-          
         />
         {textBubles}
       </div>
