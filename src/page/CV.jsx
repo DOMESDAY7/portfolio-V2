@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import TextBuble from "../components/TextBuble";
 import {motion}from  "framer-motion";
+
 class CV extends Component {
   render() {
     return (
