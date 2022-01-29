@@ -16,7 +16,6 @@ const Portfolio = () => {
     fetch("http://localhost/apiCV/index.php?q=project")
       .then((resp) => resp.json())
       .then((data) => setprojects(data))
-    console.log("bonjoue");
   }, []);
 
   return (
@@ -25,7 +24,7 @@ const Portfolio = () => {
       animate={{ opacity: 1 }}
       initial={{ opacity: 0 }}
       transition={{ delay: 0.5 }}
-      className="overflow-hidden p-5 border my-auto  "
+      className="overflow-hidden  my-auto  "
     >
     <Swiperproject />
     </motion.div>
