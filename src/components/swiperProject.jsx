@@ -2,34 +2,43 @@ import React from "react";
 import reactDom from "react-dom";
 import { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { motion  } from "framer-motion";
+import { motion } from "framer-motion";
 import "swiper/css";
 const RenderModalText = (props) => {
- useEffect(() => {
-   console.log("update")
- }, [props.description]);
-  return (
+  // useEffect(() => {
     
-   
-      <motion.div
-        animate={{ x: 0 }}
-        initial={{ x: 700 }}
-        exit={{opacity:0}}
-        transition={{ delay: 1 }}
-        className="bg-white rounded-lg  shadow-lg p-10 w-2/6 dark:text-white dark:bg-slate-700 self-center mr-5"
+  // }, [props.description]);
+  return (
+    <motion.div
+      animate={{ x: 0 }}
+      initial={{ x: 700 }}
+      exit={{ opacity: 0 }}
+      transition={{ delay: 1 }}
+      className="bg-white rounded-lg  shadow-lg p-10 w-2/6 dark:text-white dark:bg-slate-700 self-center mr-5"
+    >
+      <motion.p
+        exit={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        initial={{ opacity: 0 }}
+        className="whitespace-pre-line"
       >
-        <motion.p  exit={{opacity:0}} animate={{opacity:1}} initial={{opacity:0}} className="whitespace-pre-line">{props.description}</motion.p>
-        <br />
-        <motion.code  exit={{opacity:0}}  animate={{ y:0 }} initial={{y:100}}>{props.language.split(";").map((lang) => "|" + lang)}</motion.code>
-        <br />
-        <a href={props.link}>
-          <button className="rounded bg-black text-white p-3">
-            Voir le projet
-          </button>
-        </a>
-      </motion.div>
-      
-   
+        {props.description}
+      </motion.p>
+      <br />
+      <motion.code
+        exit={{ opacity: 0 }}
+        animate={{ y: 0 }}
+        initial={{ y: 100 }}
+      >
+        {props.language.split(";").map((lang) => "|" + lang)}
+      </motion.code>
+      <br />
+      <a href={props.link}>
+        <button className="rounded bg-black text-white p-3">
+          Voir le projet
+        </button>
+      </a>
+    </motion.div>
   );
 };
 const Swiperproject = () => {
@@ -57,32 +66,52 @@ const Swiperproject = () => {
     </SwiperSlide>
   ));
 
-    const modal = <RenderModalText
-    description={projects[cpt] == null ? "null" : projects[cpt].description}
-    language={
-      projects[cpt] == null
-        ? "un problème est survenu"
-        : projects[cpt].language
-    }
-    link={
-      projects[cpt] == null ? "un problème est survenu" : projects[cpt].link
-    }
-  />;
+  const modal = (
+    <RenderModalText
+      description={projects[cpt] == null ? "null" : projects[cpt].description}
+      language={
+        projects[cpt] == null
+          ? "un problème est survenu"
+          : projects[cpt].language
+      }
+      link={
+        projects[cpt] == null ? "un problème est survenu" : projects[cpt].link
+      }
+    />
+  );
+  const renderVisu = projects.map((project) => {
+    return (
+      <SwiperSlide className="flex justify-center self-center">
+        {project.imgProject.split(";").map((imgProject) => {
+          return <img src={imgProject} className="w-2/6 m-[5px]"/>;
+        })}
+      </SwiperSlide>
+    );
+  });
 
   return (
     <div className="flex w-screen">
       <Swiper
         direction="vertical"
-        className="flex justify-center items-center h-screen w-2/6"
+        className=" justify-center items-center h-screen w-2/6 hidden lg:flex"
+        onRealIndexChange={(swiper) => {
+          console.log(document.querySelector(".swiper-logo"))
+        }}
+        onSwiper={(swiper)=>console.log(swiper)}
+      >
+        {renderVisu}
+      </Swiper>
+      <Swiper
+        direction="vertical"
+        className="flex justify-center items-center h-screen w-2/6 swiper-logo"
+        onSwiper={(swiper)=>console.log(swiper)}
         onRealIndexChange={(swiper) => {
           setCpt(swiper.realIndex);
-          // reactDom.render(modal,document.querySelector(".here"))
-          
         }}
       >
         {renderProject}
       </Swiper>
-        {modal}
+      {modal}
     </div>
   );
 };
