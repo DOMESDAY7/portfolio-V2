@@ -1,12 +1,12 @@
 import React from "react";
-import reactDom from "react-dom";
+import { Controller } from "swiper";
 import { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { motion } from "framer-motion";
 import "swiper/css";
 const RenderModalText = (props) => {
   // useEffect(() => {
-    
+
   // }, [props.description]);
   return (
     <motion.div
@@ -43,7 +43,7 @@ const RenderModalText = (props) => {
 };
 const Swiperproject = () => {
   const [projects, setprojects] = useState([]);
-
+  const [controlledSwiper, setControlledSwiper] = useState(null);
   const [cpt, setCpt] = useState(0);
   useEffect(() => {
     fetch("http://localhost/apiCV/index.php?q=project")
@@ -55,13 +55,16 @@ const Swiperproject = () => {
 
   const renderProject = projects.map((project) => (
     <SwiperSlide className=" p-5 flex flex-col justify-center items-center">
-      <section className="shadowIn p-10 rounded-lg">
-        <img
-          src={project.imgLink}
-          alt={"logo de " + project.name}
-          className="w-96 select-none"
-        />
-      </section>
+      <Swiper className="shadowIn p-10 rounded-lg border-black h-full" direction="horizontal">
+        {console.log(project.imgLink.split("|"))}
+        {project.imgLink.split("|").map((imgLink) => {
+          return (
+            <SwiperSlide className="h-full">
+              <img src={imgLink}  className="h-1/2"/>
+            </SwiperSlide>
+          );
+        })}
+      </Swiper>
       <h5 className="text-center dark:text-white">{project.name}</h5>
     </SwiperSlide>
   ));
@@ -79,32 +82,13 @@ const Swiperproject = () => {
       }
     />
   );
-  const renderVisu = projects.map((project) => {
-    return (
-      <SwiperSlide className="flex justify-center self-center">
-        {project.imgProject.split(";").map((imgProject) => {
-          return <img src={imgProject} className="w-2/6 m-[5px]"/>;
-        })}
-      </SwiperSlide>
-    );
-  });
 
   return (
     <div className="flex w-screen">
       <Swiper
         direction="vertical"
-        className=" justify-center items-center h-screen w-2/6 hidden lg:flex"
-        onRealIndexChange={(swiper) => {
-          console.log(document.querySelector(".swiper-logo"))
-        }}
-        onSwiper={(swiper)=>console.log(swiper)}
-      >
-        {renderVisu}
-      </Swiper>
-      <Swiper
-        direction="vertical"
         className="flex justify-center items-center h-screen w-2/6 swiper-logo"
-        onSwiper={(swiper)=>console.log(swiper)}
+        onSwiper={(swiper) => console.log(swiper)}
         onRealIndexChange={(swiper) => {
           setCpt(swiper.realIndex);
         }}
