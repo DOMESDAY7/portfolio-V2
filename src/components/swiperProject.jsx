@@ -59,7 +59,7 @@ const Swiperproject = () => {
         {project.imgLink.split("|").map((imgLink) => {
           return (
             <SwiperSlide className="h-full  flex justify-center items-center">
-              <img src={imgLink}  className="h-1/2"/>
+              <img src={imgLink}  className="w-1/2"/>
             </SwiperSlide>
           );
         })}
