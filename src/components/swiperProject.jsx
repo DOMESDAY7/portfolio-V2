@@ -5,9 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { motion } from "framer-motion";
 import "swiper/css";
 const RenderModalText = (props) => {
-  // useEffect(() => {
 
-  // }, [props.description]);
   return (
     <motion.div
       animate={{ x: 0 }}
@@ -50,16 +48,17 @@ const Swiperproject = () => {
       .then((resp) => resp.json())
       .then((data) => {
         setprojects(data);
+        console.log(data)
       });
   }, []);
 
   const renderProject = projects.map((project) => (
-    <SwiperSlide className=" p-5 flex flex-col justify-center items-center">
-      <Swiper className="shadowIn p-10 rounded-lg border-black h-full" direction="horizontal">
-        {console.log(project.imgLink.split("|"))}
+    <SwiperSlide className=" p-5 flex flex-col justify-center items-center h-1/2 ">
+      <Swiper className="shadowIn p-10 rounded-lg border-black h-2/3 border w-full" direction="horizontal">
+     
         {project.imgLink.split("|").map((imgLink) => {
           return (
-            <SwiperSlide className="h-full">
+            <SwiperSlide className="h-full  flex justify-center items-center">
               <img src={imgLink}  className="h-1/2"/>
             </SwiperSlide>
           );
