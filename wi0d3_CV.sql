@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.6
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Hôte : wi0d3.myd.infomaniak.com
--- Généré le :  ven. 28 jan. 2022 à 13:05
--- Version du serveur :  10.4.19-MariaDB-1:10.4.19+maria~stretch-log
--- Version de PHP :  7.4.26
+-- Hôte : 127.0.0.1
+-- Généré le : mar. 01 fév. 2022 à 07:44
+-- Version du serveur : 10.4.22-MariaDB
+-- Version de PHP : 8.1.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `wi0d3_CV`
+-- Base de données : `cv1`
 --
 
 -- --------------------------------------------------------
@@ -67,10 +66,10 @@ CREATE TABLE `project` (
 --
 
 INSERT INTO `project` (`id_project`, `name`, `short_description`, `language`, `nbrLike`, `description`, `link`, `imgLink`) VALUES
-(1, 'Outfeat', 'Une plateforme pour promouvoir les vêtements éco-responsable', 'php;html;css;js;sql;bootstrap', 12, 'Projet tutoré de dernière année de DUT MMI. \r\nRôle: Scrum master et développeur full-stack.\r\nJ\'ai été chargé de créer from scratch - en collaboration avec d\'autre développeur- la web application (PWA) OutFeat avec des fonctionnalités innovantes.', 'https://outfeat.fr/', '../img/outfeat.svg'),
-(2, 'MMi dating simulator', 'Un jeu de type visual novel pour l\'orientation\r\n', 'php;html;css;javascript;jquery', 6, 'Projet tutoré de première année du DUT MMI. Rôles: chef de projet et graphiste', 'https://github.com/FeeZBLH/LPDJ_ProjetTut', '../img/mmi_dating.png'),
-(3, 'You have been coroned', 'Un jeu de type \"shoot them up\"', 'js;d3', 20, 'Projet réalisé dans le cadre d\'un TP sur la programmation orientée objet', 'https://github.com/BambiDesOceans/You-veBeenCoroned', '../img/corona.svg'),
-(4, 'MMi TODO', 'organisation des projet', 'php;css;html;jquery', 5, 'Projet de ma propre initiative pour organisé les travaux des mmi', 'https://www.mathieuandry.fr/mmi.todo/', '../img/M.png'),
+(1, 'Outfeat', 'Une plateforme pour promouvoir les vêtements éco-responsable', 'php;html;css;js;sql;bootstrap', 12, 'Projet tutoré de dernière année de DUT MMI. \r\nRôle: Scrum master et développeur full-stack.\r\nJ\'ai été chargé de créer from scratch - en collaboration avec d\'autre développeur- la web application (PWA) OutFeat avec des fonctionnalités innovantes.', 'https://outfeat.fr/', './src/img/imgProject/outfeat'),
+(2, 'MMi dating simulator', 'Un jeu de type visual novel pour l\'orientation\r\n', 'php;html;css;javascript;jquery', 6, 'Projet tutoré de première année du DUT MMI. Rôles: chef de projet et graphiste', 'https://github.com/FeeZBLH/LPDJ_ProjetTut', './src/img/mmi_dating.png'),
+(3, 'You have been coroned', 'Un jeu de type \"shoot them up\"', 'js;d3', 20, 'Projet réalisé dans le cadre d\'un TP sur la programmation orientée objet', 'https://github.com/BambiDesOceans/You-veBeenCoroned', './src/img/corona.svg'),
+(4, 'MMi TODO', 'organisation des projet', 'php;css;html;jquery', 5, 'Projet de ma propre initiative pour organisé les travaux des mmi', 'https://www.mathieuandry.fr/mmi.todo/', './src/img/imgProject/mmiTodo/M.png|./src/img/imgProject/mmiTodo/screen.png'),
 (5, 'Trend', 'Blog réalisé dans la matière développement back', 'php;bootstrap;css;html;javascript', 10, 'Le projet Trend est un mini blog disposant d\'un backoffice. Rôle: développeur fullstack', 'https://trend.marinavelasco.fr/', '../img/Trend.svg');
 
 --
