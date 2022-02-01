@@ -3,7 +3,6 @@
 @import url("textBuble.css");
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;700&display=swap');
-@import url("navbar.css");
 @import url("tailwind.css");
 @import url("portfolio.css");
 #app{
@@ -38,10 +37,9 @@ p{
     height:5vh;
     width: 5vh;
     position: fixed;
-    z-index: 5;
     right: 5%;
     top: 5%;
-    transform: translate(0,-50%);
+   
 }
 .anim-flotte{
     animation: flotte infinite  3s;
