@@ -1,9 +1,10 @@
 import React from "react";
-import { Controller } from "swiper";
+import { Navigation } from "swiper";
 import { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { motion } from "framer-motion";
 import "swiper/css";
+import 'swiper/css/navigation';
 export function useMediaQuery(query) {
   const [matches, setMatches] = useState(false);
 
@@ -88,6 +89,7 @@ const Swiperproject = () => {
       <Swiper
         className="shadowIn p-10 rounded-lg border-black h-1/2 sm:h-2/3  w-full"
         direction="horizontal"
+        modules={[Navigation]}
       >
         {project.imgLink.split("|").map((imgLink) => {
           return (

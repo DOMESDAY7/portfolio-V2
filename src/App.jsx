@@ -7,23 +7,7 @@ import { AnimatePresence } from "framer-motion";
 import { useEffect } from "react";
 
 function App() {
-  useEffect(() => {
-    let darkBtn = document.querySelector(".darkmodeBtn");
-    let fluid = document.querySelector(".fluidSwitch");
-    // fluid.animate([{}]);
-   darkBtn.addEventListener("click", () => {
-        document.querySelector("html").classList.toggle("dark");
-    });
-    darkBtn.addEventListener("mousedown",()=>{
-      fluid.classList.add("w-full")
-    })
-    darkBtn.addEventListener("mouseup",()=>{
-        fluid.classList.remove("w-full")
-        darkBtn.classList.toggle("justify-end")
-
-     
-    })
-  }, []);
+  
   return (
     <AnimatePresence exitBeforeEnter>
       <BrowserRouter>

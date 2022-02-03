@@ -9,7 +9,6 @@ class CV extends Component {
         exit={{ opacity: 0 }}
         animate={{ opacity: 1}}
         initial={{ opacity: 0 }}
-        transition={{delay:0.5}}
         className="page max-w-5xl mx-auto dark:text-white my-3.5 shadow-lg dark:shadow-gray-700 "
       >
         <h1 className="text-center text-4xl">Mathieu Andriamiraho</h1><br/>
