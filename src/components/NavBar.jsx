@@ -1,68 +1,34 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect,useState } from "react";
 const Navbar = () => {
-  useEffect(() => {
+  const [check, setcheck] = useState(false);
+  const tailleMaxBoule = 100;
+ 
+  function changePage(){
     let boule = document.querySelector(".bigBoule");
-    let tailleMaxBoule = 100;
-    let check = false;
-    boule.addEventListener("click", () => {
-      if (check == false) {
-        setTimeout(() => {
-          boule.classList.toggle("scale-[100]");
-        }, 1001);
-        boule.animate([{ transform: `scale(${tailleMaxBoule})` }], 1000);
-      } else {
-        setTimeout(() => {
-          boule.classList.toggle("scale-1");
-        }, 1001);
-      }
-    });
-    // let navButtons = document.querySelectorAll(".navButton")
-    // let check=true;
-    // let tailleMaxBoule =50;
-    // navButtons.forEach(navButton => {
-    //     navButton.addEventListener("click",()=>{
-    //        if(check){
-    //         setTimeout(() => {
-    //             boule.style.top="90%"
-    //             boule.style.right="95%"
-    //         }, 1001);
-    //            boule.animate([
-    //             {top:"5%", right:"5%"},
-    //             {transform:`scale(${tailleMaxBoule})`},
-    //             {top:"90%", right:"95%"},
-    //         ],1000)
-    //         check=false
-
-    //     }else{
-    //         setTimeout(() => {
-    //             boule.style.right="5%"
-    //             boule.style.top="5%"
-    //             console.log("bonjour")
-    //         }, 1001);
-    //         boule.animate([
-    //             {top:"90%", right:"95%"},
-    //             {transform:`scale(${tailleMaxBoule})`},
-    //             {top:"5%", right:"5%"},
-
-    //         ],1000)
-
-    //         check=true
-    //         }
-    //     })
-    // });
-  });
+    setTimeout(() => {
+      boule.classList.toggle("scale-[100]");
+    }, 701);
+    
+    check== false ? boule.animate([{ transform: `scale(${tailleMaxBoule})` }], 700) : boule.animate([{ transform: `scale(1)` }], 700) ;
+    check= check==true ? setcheck(false) : setcheck(true);
+   }
+  
   return (
-    <nav className=" border w-screen">
-      <NavLink to="/portfolio">
-        <div className="z-40 relative text-white">Portfolio</div>
+    <div className="m-auto z-40 fixed top-[50%] text-center ">
+      <NavLink to="/portfolio" className="text-white text-6xl tracking-widest p-5 " id="navBtn" onClick={changePage}>
+      Portfolio
       </NavLink>
       <br />
-      <NavLink to="/cv">
-        <div className="z-40 relative text-white">CV</div>
+      <NavLink to="/cv" className="text-white text-6xl tracking-widest p-5 " id="navBtn" onClick={changePage}>
+      CV
       </NavLink>
-    </nav>
+      <div className="bigBoule z-30 shadow-lg shadow-cyan-500/50" onClick={changePage}></div>
+      <div className="darkmodeBtn dark:text-white cursor-pointer flex  items-center fixed border-2 border-black dark:border-white w-14 rounded-full h-8 bottom-5 right-5 ease duration-300 ">
+        <div className="rounded-full w-6 h-6 bg-gradient-to-r to-cyan-500 from-blue-500 dark:bg-white fluidSwitch ease-out duration-300"></div>
+      </div>
+    </div>
   );
 };
 

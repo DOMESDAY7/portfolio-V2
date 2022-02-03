@@ -32,10 +32,8 @@ function App() {
           <Route exact path="/cv" element={<CV />} />
           <Route exact path="/portfolio" element={<Portfolio />} />
         </Routes>
-        <div className="bigBoule z-30 shadow-lg shadow-cyan-500/50"></div>
-        <div className="darkmodeBtn dark:text-white cursor-pointer flex  items-center fixed border-2 border-black dark:border-white w-14 rounded-full h-8 bottom-5 right-5 ease duration-300 relative z-40">
-          <div className="rounded-full w-6 h-6 bg-gradient-to-r to-cyan-500 from-blue-500 dark:bg-white fluidSwitch ease-out duration-300"></div>
-        </div>
+       
+        
 
         <Navbar />
       </BrowserRouter>
