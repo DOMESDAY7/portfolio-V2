@@ -2,25 +2,32 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 const Navbar = () => {
+  const [checkInterval, setcheckInterval] = useState(false);
   const [check, setcheck] = useState(false);
   const tailleMaxBoule = 100;
   const [navBtnCheck, setnavBtnCheck] = useState(false);
   function changePage() {
-    let boule = document.querySelector(".bigBoule");
-    setTimeout(() => {
-      boule.classList.toggle("scale-[100]");
-      setnavBtnCheck(!navBtnCheck);
-    }, 500.1);
+    if (checkInterval == false) {
+      let boule = document.querySelector(".bigBoule");
+      setTimeout(() => {
+        boule.classList.toggle("scale-[100]");
+      }, 500.1);
 
-    check == false
-      ? boule.animate(
+      if (check == false) {
+        boule.animate(
           [
             { transform: `scale(0.75)` },
             { transform: `scale(${tailleMaxBoule})` },
           ],
           500
-        )
-      : boule.animate(
+        );
+      
+        setTimeout(() => {
+          setnavBtnCheck(true);
+        }, 500.1);
+        setcheck(!check);
+      } else {
+        boule.animate(
           [
             { transform: `scale(${tailleMaxBoule})` },
             { transform: `scale(0.80)` },
@@ -28,12 +35,20 @@ const Navbar = () => {
           ],
           500
         );
-    setcheck(!check)
+        setnavBtnCheck(false);
+        setcheck(!check);
+       
+      }
+      setcheckInterval(true);
+      setTimeout(() => {
+        setcheckInterval(false);
+      }, 500.1);
+    }
+    console.log(navBtnCheck);
   }
   useEffect(() => {
     let darkBtn = document.querySelector(".darkmodeBtn");
     let fluid = document.querySelector(".fluidSwitch");
-    // fluid.animate([{}]);
     darkBtn.addEventListener("click", () => {
       document.querySelector("html").classList.toggle("dark");
     });
@@ -63,7 +78,6 @@ const Navbar = () => {
         <span
           onClick={changePage}
           style={{ display: navBtnCheck == false ? "none" : "inline-block" }}
-  
         >
           <NavLink
             to="/cv"
@@ -78,6 +92,7 @@ const Navbar = () => {
         className="bigBoule z-30 shadow-lg shadow-cyan-500/50"
         onClick={changePage}
       ></div>
+
       <div className="darkmodeBtn dark:text-white cursor-pointer flex  items-center fixed border-2 border-black dark:border-white w-14 rounded-full h-8 bottom-5 right-5 ease duration-300 ">
         <div className="rounded-full w-6 h-6 bg-gradient-to-r to-cyan-500 from-blue-500 dark:bg-white fluidSwitch ease-out duration-300"></div>
       </div>
