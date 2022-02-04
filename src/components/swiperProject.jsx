@@ -44,7 +44,7 @@ const RenderModalText = (props) => {
       animate="animate"
       initial="initial"
       variants={variants}
-      className="bg-white rounded-lg  shadow-lg p-10 sm:w-2/6 dark:text-white dark:bg-slate-700 justify-start self-center  z-10 absolute bottom-0 sm:static"
+      className="bg-stone-50 rounded-lg  shadow-lg p-10 sm:w-2/6 dark:text-white dark:bg-slate-700 justify-start self-center  z-10 absolute bottom-0 sm:static"
     >
       <motion.p
         exit={{ opacity: 0 }}

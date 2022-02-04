@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mar. 01 fév. 2022 à 07:44
+-- Généré le : ven. 04 fév. 2022 à 13:46
 -- Version du serveur : 10.4.22-MariaDB
 -- Version de PHP : 8.1.1
 
@@ -66,8 +66,8 @@ CREATE TABLE `project` (
 --
 
 INSERT INTO `project` (`id_project`, `name`, `short_description`, `language`, `nbrLike`, `description`, `link`, `imgLink`) VALUES
-(1, 'Outfeat', 'Une plateforme pour promouvoir les vêtements éco-responsable', 'php;html;css;js;sql;bootstrap', 12, 'Projet tutoré de dernière année de DUT MMI. \r\nRôle: Scrum master et développeur full-stack.\r\nJ\'ai été chargé de créer from scratch - en collaboration avec d\'autre développeur- la web application (PWA) OutFeat avec des fonctionnalités innovantes.', 'https://outfeat.fr/', './src/img/imgProject/outfeat'),
-(2, 'MMi dating simulator', 'Un jeu de type visual novel pour l\'orientation\r\n', 'php;html;css;javascript;jquery', 6, 'Projet tutoré de première année du DUT MMI. Rôles: chef de projet et graphiste', 'https://github.com/FeeZBLH/LPDJ_ProjetTut', './src/img/mmi_dating.png'),
+(1, 'Outfeat', 'Une plateforme pour promouvoir les vêtements éco-responsable', 'php;html;css;js;sql;bootstrap', 12, 'Projet tutoré de dernière année de DUT MMI. \nRôle: Scrum master et développeur full-stack.\nJ\'ai été chargé de créer from scratch - en collaboration avec d\'autre développeur- la web application (PWA) OutFeat avec des fonctionnalités innovantes.', 'https://outfeat.fr/', './src/img/imgProject/outfeat/outfeat.svg|./src/img/imgProject/outfeat/outfeat-swipe.svg|./src/img/imgProject/outfeat/outfeat-swipe-desktop.svg'),
+(2, 'MMi dating simulator', 'Un jeu de type visual novel pour l\'orientation\r\n', 'php;html;css;javascript;jquery', 6, 'Projet tutoré de première année du DUT MMI. Rôles: chef de projet et graphiste', 'https://github.com/FeeZBLH/LPDJ_ProjetTut', './src/img/mmi_dating.png|https://lh6.googleusercontent.com/86QpO4rD80j1H2HQ_vhrMs0ZOraHI3v0is5sgxowLQSuz1osski3pqSlzpW_Ive0-EGmizLo190q0hDb208hrBa5NRW5I99p0mkFSi4R_sZj86dtJ9MuJWgD8YxLQOqsCa8-VS5W-sw'),
 (3, 'You have been coroned', 'Un jeu de type \"shoot them up\"', 'js;d3', 20, 'Projet réalisé dans le cadre d\'un TP sur la programmation orientée objet', 'https://github.com/BambiDesOceans/You-veBeenCoroned', './src/img/corona.svg'),
 (4, 'MMi TODO', 'organisation des projet', 'php;css;html;jquery', 5, 'Projet de ma propre initiative pour organisé les travaux des mmi', 'https://www.mathieuandry.fr/mmi.todo/', './src/img/imgProject/mmiTodo/M.png|./src/img/imgProject/mmiTodo/screen.png'),
 (5, 'Trend', 'Blog réalisé dans la matière développement back', 'php;bootstrap;css;html;javascript', 10, 'Le projet Trend est un mini blog disposant d\'un backoffice. Rôle: développeur fullstack', 'https://trend.marinavelasco.fr/', '../img/Trend.svg');

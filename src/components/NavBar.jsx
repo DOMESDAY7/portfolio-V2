@@ -21,7 +21,7 @@ const Navbar = () => {
           ],
           500
         );
-      
+
         setTimeout(() => {
           setnavBtnCheck(true);
         }, 500.1);
@@ -37,7 +37,6 @@ const Navbar = () => {
         );
         setnavBtnCheck(false);
         setcheck(!check);
-       
       }
       setcheckInterval(true);
       setTimeout(() => {
@@ -62,34 +61,38 @@ const Navbar = () => {
   }, []);
   return (
     <div>
-      <div className="z-40 fixed top-[50%] right-[50%]  translate-x-2/4 text-center ">
+      <div className="z-40 fixed top-[0] right-[50%]  translate-x-2/4 text-center flex flex-col justify-center  h-screen">
         <span onClick={changePage}>
           <NavLink
             to="/portfolio"
-            className="text-white text-6xl tracking-widest p-5 "
+            className="text-white text-6xl tracking-widest p-5  ease-in duration-300 justify-center self-center"
             id="navBtn"
             // onClick={changePage}
-            style={{ display: navBtnCheck == false ? "none" : "inline-block" }}
+            style={{ display: navBtnCheck == false ? "none" : "flex" }}
           >
+            <img
+              src={"./src/img/portfolio.svg"}
+              alt="go to portofolio"
+              className="w-20"
+            />
             Portfolio
           </NavLink>
         </span>
         <br />
-        <span
-          onClick={changePage}
-          style={{ display: navBtnCheck == false ? "none" : "inline-block" }}
-        >
+        <span onClick={changePage}>
           <NavLink
             to="/cv"
-            className="text-white text-6xl tracking-widest p-5 "
+            className="text-white text-6xl tracking-widest p-5  ease-in duration-300 justify-center self-center"
             id="navBtn"
+            style={{ display: navBtnCheck == false ? "none" : "flex" }}
           >
+            <img src={"./src/img/cv.svg"} alt="go to cv" className="w-20" />
             CV
           </NavLink>
         </span>
       </div>
       <div
-        className="bigBoule z-30 shadow-lg shadow-cyan-500/50"
+        className="bigBoule z-30 shadow-lg shadow-cyan-500/50 transform-gpu "
         onClick={changePage}
       ></div>
 
