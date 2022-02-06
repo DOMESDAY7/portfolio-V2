@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import mathieu from "../img/mathieu.png";
+
 
 class TextBuble extends Component {
   constructor(props) {
@@ -10,7 +10,7 @@ class TextBuble extends Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost/apiCV/index.php?q=cv")
+    fetch("./apiCV/?q=cv")
       .then((resp) => resp.json())
       .then((data) => {
         this.setState({ pageText: data })
@@ -63,7 +63,7 @@ class TextBuble extends Component {
     return (
       <div className="content">
         <img
-          src={mathieu}
+          src={"/img/mathieu.png"}
           alt="image de mathieu andriamiraho"
           className=" mathieuPP"
         />

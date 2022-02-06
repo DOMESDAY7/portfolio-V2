@@ -16,7 +16,7 @@ function CV(props) {
         <h1 className="text-center text-4xl">
           Mathieu Andriamiraho {props.theme}
         </h1>
-        <a href="./src/img/cv.pdf" download>
+        <a href="/img/cv.pdf" download>
           <Download theme={props.theme} className="w-10 border"/>
         </a>
       </section>

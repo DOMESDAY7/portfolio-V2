@@ -13,7 +13,7 @@ const Portfolio = () => {
  const [projects, setprojects] = useState([]);
  //mettre l'appel des données a l'affichage du composant APP
   useEffect(() => {
-    fetch("http://localhost/apiCV/index.php?q=project")
+    fetch("./apiCV/?q=project")
       .then((resp) => resp.json())
       .then((data) => setprojects(data))
   }, []);

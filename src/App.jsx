@@ -1,6 +1,5 @@
 import React from "react";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-import Navbar from "./components/NavBar";
 import CV from "./page/CV";
 import Portfolio from "./page/portfolio";
 import { AnimatePresence } from "framer-motion";
@@ -73,6 +72,7 @@ function App() {
           <Route exact path="/" element={<CV theme={theme}/>} />
           <Route exact path="/cv" element={<CV theme={theme} />} />
           <Route exact path="/portfolio" element={<Portfolio />} />
+          <Route element={<Portfolio/>} />
         </Routes>
        
         
@@ -87,7 +87,7 @@ function App() {
             style={{ display: navBtnCheck == false ? "none" : "flex" }}
           >
             <img
-              src={"./src/img/portfolio.svg"}
+              src={"/img/portfolio.svg"}
               alt="go to portofolio"
               className="w-20"
             />
@@ -102,7 +102,7 @@ function App() {
             id="navBtn"
             style={{ display: navBtnCheck == false ? "none" : "flex" }}
           >
-            <img src={"./src/img/cv.svg"} alt="go to cv" className="w-20" />
+            <img src={"/img/cv.svg"} alt="go to cv" className="w-20" />
             CV
           </NavLink>
         </span>

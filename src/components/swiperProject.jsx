@@ -76,7 +76,7 @@ const Swiperproject = () => {
   const [controlledSwiper, setControlledSwiper] = useState(null);
   const [cpt, setCpt] = useState(0);
   useEffect(() => {
-    fetch("http://localhost/apiCV/index.php?q=project")
+    fetch("./apiCV/?q=project")
       .then((resp) => resp.json())
       .then((data) => {
         setprojects(data);
