@@ -1,10 +1,11 @@
 import React from "react";
-import { Navigation } from "swiper";
+import { Navigation} from 'swiper';
 import { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { motion } from "framer-motion";
 import "swiper/css";
 import 'swiper/css/navigation';
+// import "swiper/modules/navigation";
 export function useMediaQuery(query) {
   const [matches, setMatches] = useState(false);
 
@@ -76,7 +77,7 @@ const Swiperproject = () => {
   const [controlledSwiper, setControlledSwiper] = useState(null);
   const [cpt, setCpt] = useState(0);
   useEffect(() => {
-    fetch("./apiCV/?q=project")
+    fetch("http://localhost/apiCV/index.php?q=project")
       .then((resp) => resp.json())
       .then((data) => {
         setprojects(data);
@@ -126,6 +127,9 @@ const Swiperproject = () => {
         onRealIndexChange={(swiper) => {
           setCpt(swiper.realIndex);
         }}
+        modules={[Navigation]}
+        navigation
+       
       >
         {renderProject}
       </Swiper>

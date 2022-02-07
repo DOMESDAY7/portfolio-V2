@@ -514,6 +514,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   position: relative;
 }
 
+.bottom-0 {
+  bottom: 0px;
+}
+
 .top-\[0\] {
   top: 0;
 }
@@ -530,8 +534,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   right: 1.25rem;
 }
 
-.bottom-0 {
-  bottom: 0px;
+.z-10 {
+  z-index: 10;
 }
 
 .z-40 {
@@ -540,10 +544,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .z-30 {
   z-index: 30;
-}
-
-.z-10 {
-  z-index: 10;
 }
 
 .mx-auto {
@@ -578,6 +578,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: grid;
 }
 
+.h-1\/2 {
+  height: 50%;
+}
+
+.h-full {
+  height: 100%;
+}
+
 .h-screen {
   height: 100vh;
 }
@@ -590,20 +598,20 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 1.5rem;
 }
 
-.h-1\/2 {
-  height: 50%;
-}
-
-.h-full {
-  height: 100%;
-}
-
 .w-10 {
   width: 2.5rem;
 }
 
 .w-full {
   width: 100%;
+}
+
+.w-2\/3 {
+  width: 66.666667%;
+}
+
+.w-screen {
+  width: 100vw;
 }
 
 .w-20 {
@@ -616,14 +624,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .w-6 {
   width: 1.5rem;
-}
-
-.w-2\/3 {
-  width: 66.666667%;
-}
-
-.w-screen {
-  width: 100vw;
 }
 
 .max-w-5xl {
@@ -697,10 +697,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   white-space: pre-line;
 }
 
-.rounded-full {
-  border-radius: 9999px;
-}
-
 .rounded-lg {
   border-radius: 0.5rem;
 }
@@ -709,12 +705,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-radius: 0.25rem;
 }
 
-.border-2 {
-  border-width: 2px;
+.rounded-full {
+  border-radius: 9999px;
 }
 
 .border {
   border-width: 1px;
+}
+
+.border-2 {
+  border-width: 2px;
 }
 
 .border-black {
@@ -740,16 +740,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-gradient-to: #06b6d4;
 }
 
-.p-5 {
-  padding: 1.25rem;
-}
-
 .p-10 {
   padding: 2.5rem;
 }
 
 .p-3 {
   padding: 0.75rem;
+}
+
+.p-5 {
+  padding: 1.25rem;
 }
 
 .text-center {
@@ -816,11 +816,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(30 41 59 / var(--tw-bg-opacity));
 }
 
-.dark .dark\:bg-white {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
 .dark .dark\:bg-slate-700 {
   --tw-bg-opacity: 1;
   background-color: rgb(51 65 85 / var(--tw-bg-opacity));
@@ -828,6 +823,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .dark .dark\:bg-slate-700\/50 {
   background-color: rgb(51 65 85 / 0.5);
+}
+
+.dark .dark\:bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
 .dark .dark\:text-white {
