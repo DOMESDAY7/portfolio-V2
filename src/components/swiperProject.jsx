@@ -1,10 +1,11 @@
 import React from "react";
-import { Navigation } from "swiper";
+import { Navigation,Keyboard  } from "swiper";
 import { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { motion } from "framer-motion";
 import "swiper/css";
 import "swiper/css/navigation";
+import "swiper/css/keyboard";
 // import "swiper/modules/navigation";
 export function useMediaQuery(query) {
   const [matches, setMatches] = useState(false);
@@ -34,7 +35,6 @@ const Swiperproject = () => {
       .then((resp) => resp.json())
       .then((data) => {
         setprojects(data);
-        console.log(data);
       });
   }, []);
 
@@ -48,6 +48,7 @@ const Swiperproject = () => {
     }
     function showDescription() {
       console.log(projects[this]);
+      
     }
     return (
       <p>
@@ -65,16 +66,16 @@ const Swiperproject = () => {
     const isSmall = useMediaQuery("(min-width:640px)");
     const variants = isSmall
       ? {
-          animate: { x: -200, opacity:1 },
-          initial: { x: 700 },
+          animate: { x: -200, opacity: 1 },
+          initial: { x: 300 },
           exit: { opacity: 0 },
-          transition: { delay: 1 },
+          transition: { type: "spring", stiffness: 200 },
         }
       : {
-          animate: { x: 0, opacity:1 },
-          initial: { x: 700 },
+          animate: { x: 0, opacity: 1 },
+          initial: { x: 300 },
           exit: { opacity: 0 },
-          transition: { delay: 1 },
+          transition: { type: "spring", stiffness: 200},
         };
     return (
       <motion.div
@@ -88,6 +89,7 @@ const Swiperproject = () => {
           animate={{ opacity: 1 }}
           initial={{ opacity: 0 }}
           className="whitespace-pre-line"
+          data-description={props.id}
         >
           <Description text={props.description} id={props.id} />
           {props.id_project}
@@ -115,8 +117,10 @@ const Swiperproject = () => {
       <Swiper
         className="shadowIn p-10 rounded-lg border-black h-1/2 sm:h-2/3  w-full horiSwiper"
         direction="horizontal"
-        modules={[Navigation]}
+        modules={[Navigation,Keyboard]}
         navigation
+        keyboard
+        
       >
         {project.imgLink.split("|").map((imgLink) => {
           return (
@@ -154,8 +158,9 @@ const Swiperproject = () => {
         onRealIndexChange={(swiper) => {
           setCpt(swiper.realIndex);
         }}
-        modules={[Navigation]}
+        modules={[Navigation,Keyboard]}
         navigation
+        keyboard
       >
         {renderProject}
       </Swiper>
