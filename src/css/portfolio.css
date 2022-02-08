@@ -2,3 +2,61 @@
     -webkit-box-shadow: inset 4px 4px 15px 0px #000000, -25px -5px 32px 5px rgba(0,0,0,0); 
 box-shadow: inset 4px 4px 15px 0px #000000, -25px -5px 32px 5px rgba(0,0,0,0);
 }
+.verticalSwiper>.swiper-button-prev {
+    display: none;
+}
+.verticalSwiper>.swiper-button-next {
+  display: none;
+}
+.horiSwiper>.swiper-button-next{
+    background-image: url(../../public/img/navArrow.svg);
+        background-repeat: no-repeat;
+        display: inline-block;
+        background-position: center;
+        background-size: 100% auto;
+        transform: rotate(-90deg);
+        width: 3rem;
+        height: 3rem;
+}
+.horiSwiper>.swiper-button-next::after{
+    display: none;
+}
+.horiSwiper>.swiper-button-prev{
+    background-image: url(../../public/img/navArrow.svg);
+        background-repeat: no-repeat;
+        display: inline-block;
+        background-position: center;
+        background-size: 100% auto;
+        transform: rotate(90deg);
+        width: 3rem;
+        height: 3rem;
+}
+.horiSwiper>.swiper-button-prev::after{
+    display: none;
+}
+@media (min-width:640px) {
+  
+    .verticalSwiper{
+        /* border: red solid ; */
+        position: relative;
+    }
+    .verticalSwiper>.swiper-button-next {
+        display: inline-block;
+        /* border: red solid; */
+        transform: rotate(90deg) translate(0,50%);
+        position: absolute;
+        top: 90%;
+        left: 50%;
+    }
+    .verticalSwiper>.swiper-button-prev {
+        
+        display: inline-block;
+        transform: rotate(90deg) translate(-50%,50%);
+        position: absolute;
+        top: 10%;
+        left: 50%;
+    }
+   
+}
+
+
