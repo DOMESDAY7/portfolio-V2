@@ -83,7 +83,6 @@ function App() {
             to="/portfolio"
             className="text-white text-6xl tracking-widest p-5  ease-in duration-300 justify-center self-center"
             id="navBtn"
-            // onClick={changePage}
             style={{ display: navBtnCheck == false ? "none" : "flex" }}
           >
             <img
@@ -112,7 +111,7 @@ function App() {
         onClick={changePage}
       ></div>
 
-      <div className="darkmodeBtn dark:text-white cursor-pointer flex  items-center fixed border-2 border-black dark:border-white w-14 rounded-full h-8 bottom-5 right-5 ease duration-300 " onClick={()=>{setTheme(!theme)}}>
+      <div className="darkmodeBtn dark:text-white cursor-pointer flex  items-center fixed border-2 border-black dark:border-white w-14 rounded-full h-8 bottom-5 right-5 ease duration-300 z-40" onClick={()=>{setTheme(!theme)}}>
         <div className="rounded-full w-6 h-6 bg-gradient-to-r to-cyan-500 from-blue-500 dark:bg-white fluidSwitch ease-out duration-300"></div>
       </div>
       </BrowserRouter>

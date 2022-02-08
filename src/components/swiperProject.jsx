@@ -1,12 +1,12 @@
 import React from "react";
-import { Navigation,Keyboard  } from "swiper";
+import { Navigation, Keyboard } from "swiper";
 import { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { motion } from "framer-motion";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/keyboard";
-// import "swiper/modules/navigation";
+
 export function useMediaQuery(query) {
   const [matches, setMatches] = useState(false);
 
@@ -24,12 +24,12 @@ export function useMediaQuery(query) {
 
   return matches;
 }
-// export const useIsSmall   = ()=>useMediaQuery("(min-width:640px)")
 
 const Swiperproject = () => {
   const [projects, setprojects] = useState([]);
-  const [controlledSwiper, setControlledSwiper] = useState(null);
+
   const [cpt, setCpt] = useState(0);
+
   useEffect(() => {
     fetch("http://localhost/apiCV/index.php?q=project")
       .then((resp) => resp.json())
@@ -39,6 +39,7 @@ const Swiperproject = () => {
   }, []);
 
   const Description = (props) => {
+    const [plusCheck, setPlusCheck] = useState(false);
     let cpt = 0;
     let shortString = "";
     while (cpt < 50) {
@@ -46,19 +47,19 @@ const Swiperproject = () => {
 
       cpt++;
     }
-    function showDescription() {
-      console.log(projects[this]);
-      
-    }
     return (
       <p>
-        {shortString}
-        <span
-          className=" rounded-full px-1 cursor-pointer text-cyan-400"
-          onClick={showDescription.bind(props.id)}
+        {plusCheck == true ? props.text : shortString}
+        <strong
+          className={
+            plusCheck == false ? " px-1 cursor-pointer text-cyan-400" : "hidden"
+          }
+          onClick={() => {
+            setPlusCheck(!plusCheck);
+          }}
         >
-          <strong>...plus</strong>
-        </span>
+          ...plus
+        </strong>
       </p>
     );
   };
@@ -67,15 +68,15 @@ const Swiperproject = () => {
     const variants = isSmall
       ? {
           animate: { x: -200, opacity: 1 },
-          initial: { x: 300 },
-          exit: { opacity: 0 },
+          initial: { x: 0 },
+          exit: { opacity: 0,x: -200 },
           transition: { type: "spring", stiffness: 200 },
         }
       : {
           animate: { x: 0, opacity: 1 },
-          initial: { x: 300 },
-          exit: { opacity: 0 },
-          transition: { type: "spring", stiffness: 200},
+          initial: { x: 0 },
+          exit: { opacity: 0,x: -200 },
+          transition: { type: "spring", stiffness: 200 },
         };
     return (
       <motion.div
@@ -117,10 +118,9 @@ const Swiperproject = () => {
       <Swiper
         className="shadowIn p-10 rounded-lg border-black h-1/2 sm:h-2/3  w-full horiSwiper"
         direction="horizontal"
-        modules={[Navigation,Keyboard]}
+        modules={[Navigation, Keyboard]}
         navigation
         keyboard
-        
       >
         {project.imgLink.split("|").map((imgLink) => {
           return (
@@ -158,7 +158,7 @@ const Swiperproject = () => {
         onRealIndexChange={(swiper) => {
           setCpt(swiper.realIndex);
         }}
-        modules={[Navigation,Keyboard]}
+        modules={[Navigation, Keyboard]}
         navigation
         keyboard
       >
@@ -168,7 +168,4 @@ const Swiperproject = () => {
     </div>
   );
 };
-
 export default Swiperproject;
-
-//quand la slide change il faut incrémenté un compteur qui définira le texte a affiché
