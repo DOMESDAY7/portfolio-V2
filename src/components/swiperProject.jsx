@@ -1,11 +1,12 @@
 import React from "react";
-import { Navigation, Keyboard } from "swiper";
+import { Navigation, Keyboard,Mousewheel  } from "swiper";
 import { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { motion } from "framer-motion";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/keyboard";
+import "swiper/css/mousewheel";
 
 export function useMediaQuery(query) {
   const [matches, setMatches] = useState(false);
@@ -27,11 +28,11 @@ export function useMediaQuery(query) {
 
 const Swiperproject = () => {
   const [projects, setprojects] = useState([]);
-
   const [cpt, setCpt] = useState(0);
 
   useEffect(() => {
-    fetch("http://localhost/apiCV/index.php?q=project")
+    // fetch("./apiCV/?q=project")
+    fetch("http://localhost/apiCV/?q=project")
       .then((resp) => resp.json())
       .then((data) => {
         setprojects(data);
@@ -83,7 +84,8 @@ const Swiperproject = () => {
         animate="animate"
         initial="initial"
         variants={variants}
-        className="bg-stone-50 rounded-lg  shadow-lg p-10 sm:w-2/6 dark:text-white dark:bg-slate-700 justify-start self-center  z-10 absolute bottom-0 sm:static"
+        className="bg-stone-100 rounded-lg  shadow-lg p-10 sm:w-2/6 dark:text-white dark:bg-slate-700 justify-start self-center  z-10 absolute bottom-0 sm:static w-11/12 md:ml-28"
+        id="popUpInfo"
       >
         <motion.p
           exit={{ opacity: 0 }}
@@ -121,6 +123,7 @@ const Swiperproject = () => {
         modules={[Navigation, Keyboard]}
         navigation
         keyboard
+        
       >
         {project.imgLink.split("|").map((imgLink) => {
           return (
@@ -158,9 +161,10 @@ const Swiperproject = () => {
         onRealIndexChange={(swiper) => {
           setCpt(swiper.realIndex);
         }}
-        modules={[Navigation, Keyboard]}
+        modules={[Navigation, Keyboard,Mousewheel ]}
         navigation
         keyboard
+        mousewheel
       >
         {renderProject}
       </Swiper>

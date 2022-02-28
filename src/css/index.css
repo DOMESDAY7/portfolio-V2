@@ -31,14 +31,12 @@ p{
 }
 
 .bigBoule{
-    background-image: url(../../public/img/gradient.svg);
+    background-image: url(/img/gradient.svg);
     background-size: 100%;
     border-radius: 50%;
     height:5vh;
     width: 5vh;
-    position: fixed;
-    right: 5%;
-    top: 5%;
+    
    
 }
 .anim-flotte{

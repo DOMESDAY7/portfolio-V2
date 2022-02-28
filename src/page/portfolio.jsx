@@ -1,22 +1,7 @@
-import React, { Component } from "react";
 import { motion } from "framer-motion";
-import { useEffect } from "react";
-import { useState } from "react";
 import Swiperproject from "../components/swiperProject";
 
-// Import Swiper styles
-// import "swiper/css";
-
-
 const Portfolio = () => {
-  const [selectedId, setSelectedId] = useState(null);
- const [projects, setprojects] = useState([]);
- //mettre l'appel des données a l'affichage du composant APP
-  useEffect(() => {
-    fetch("./apiCV/?q=project")
-      .then((resp) => resp.json())
-      .then((data) => setprojects(data))
-  }, []);
 
   return (
     <motion.div

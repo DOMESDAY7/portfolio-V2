@@ -9,7 +9,7 @@ box-shadow: inset 4px 4px 15px 0px #000000, -25px -5px 32px 5px rgba(0,0,0,0);
   display: none;
 }
 .horiSwiper>.swiper-button-next{
-    background-image: url(../../public/img/navArrow.svg);
+    background-image: url(/img/navArrow.svg);
         background-repeat: no-repeat;
         display: inline-block;
         background-position: center;
@@ -22,7 +22,7 @@ box-shadow: inset 4px 4px 15px 0px #000000, -25px -5px 32px 5px rgba(0,0,0,0);
     display: none;
 }
 .horiSwiper>.swiper-button-prev{
-    background-image: url(../../public/img/navArrow.svg);
+    background-image: url(/img/navArrow.svg);
         background-repeat: no-repeat;
         display: inline-block;
         background-position: center;
